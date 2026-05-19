@@ -131,16 +131,16 @@
     "unist-util-visit": "5.1.0",
     "unzipper": "0.12.3",
     "vdf-parser": "1.2.1",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.1.19",
-    "vite-plus": "latest",
+    "vite": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@1633",
+    "vite-plus": "https://pkg.pr.new/voidzero-dev/vite-plus@1633",
     "wavesurfer.js": "7.12.6",
     "ws": "8.20.0"
   },
   "overrides": {
     "esbuild": "0.28.0",
     "node-gyp": "12.2.0",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.1.19",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@0.1.16"
+    "vite": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@1633",
+    "vitest": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-test@1633"
   },
   "engines": {
     "node": "24"
