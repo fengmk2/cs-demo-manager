@@ -133,7 +133,6 @@
     "vdf-parser": "1.2.1",
     "vite": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@1588",
     "vite-plus": "https://pkg.pr.new/voidzero-dev/vite-plus@1588",
-    "vitest": "^4.1.5",
     "wavesurfer.js": "7.12.6",
     "ws": "8.20.0"
   },
