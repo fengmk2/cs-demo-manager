@@ -12,8 +12,8 @@ allowBuilds:
 overrides:
   esbuild: '$esbuild'
   node-gyp: '$node-gyp'
-  vite: '$vite'
-  vitest: '$vitest'
+  vite: 'https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@1856'
+  vitest: '4.1.9'
   # To remove when https://github.com/electron/electron/issues/51619 is resolved
   yauzl: '3.3.1'
 
@@ -25,5 +25,17 @@ peerDependencyRules:
     vite: '*'
     vitest: '*'
 
+minimumReleaseAge: 60
 minimumReleaseAgeExclude:
   - '@akiver/cs-demo-analyzer'
+  - '@voidzero-dev/*'
+  - vite-plus
+  - '@vitest/*'
+  - vite
+  - vitest
+  - '@oxc-project/*'
+  - '@oxlint/*'
+  - oxlint
+  - oxfmt
+  - oxlint-tsgolint
+blockExoticSubdeps: false
