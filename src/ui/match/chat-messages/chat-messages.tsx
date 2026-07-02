@@ -11,7 +11,9 @@ import { Select, type SelectOption } from 'csdm/ui/components/inputs/select';
 export function ChatMessages() {
   const match = useCurrentMatch();
   const internalAllTeamValue = 'csdm-all-teams';
+  const internalAllPlayersValue = 'csdm-all-players';
   const [teamName, setTeamName] = useState(internalAllTeamValue);
+  const [playerSteamId, setPlayerSteamId] = useState(internalAllPlayersValue);
   const [fuzzySearchText, setFuzzySearchText] = useState('');
 
   const { chatMessages, checksum } = match;
@@ -34,10 +36,24 @@ export function ChatMessages() {
     );
   }
 
+  if (playerSteamId !== internalAllPlayersValue) {
+    visibleChatMessages = visibleChatMessages.filter((message) => message.senderSteamId === playerSteamId);
+  }
+
   const options: SelectOption[] = [
     { value: internalAllTeamValue, label: <Trans>All teams</Trans> },
     { value: match.teamA.name, label: match.teamA.name },
     { value: match.teamB.name, label: match.teamB.name },
+  ];
+
+  const selectablePlayers =
+    teamName === internalAllTeamValue ? match.players : match.players.filter((player) => player.teamName === teamName);
+  const playerOptions: SelectOption[] = [
+    { value: internalAllPlayersValue, label: <Trans>All players</Trans> },
+    ...selectablePlayers.map((player) => ({
+      value: player.steamId,
+      label: player.name,
+    })),
   ];
 
   return (
@@ -51,6 +67,14 @@ export function ChatMessages() {
               value={teamName}
               onChange={(teamName) => {
                 setTeamName(teamName);
+                setPlayerSteamId(internalAllPlayersValue);
+              }}
+            />
+            <Select
+              options={playerOptions}
+              value={playerSteamId}
+              onChange={(playerSteamId) => {
+                setPlayerSteamId(playerSteamId);
               }}
             />
             <TextInputFilter value={fuzzySearchText} onChange={setFuzzySearchText} />

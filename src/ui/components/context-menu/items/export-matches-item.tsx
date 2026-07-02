@@ -44,7 +44,7 @@ export function ExportMatchesItem({ matches }: Props) {
       <ExportToXlsxItem onClick={onExportToXlsxClick} />
       <ExportMatchesToJsonItem checksums={checksums} />
       <ExportPlayersVoiceItem demoPaths={filepaths} players={players} />
-      <ExportChatMessagesItem checksums={checksums} />
+      <ExportChatMessagesItem checksums={checksums} players={players} />
     </SubContextMenu>
   );
 }
