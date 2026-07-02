@@ -1,5 +1,26 @@
-nodeLinker: hoisted
 minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - vite-plus
+  - '@voidzero-dev/*'
+  - '@oxc-project/*'
+  - '@oxlint/*'
+  - '@oxfmt/*'
+  - '@oxlint-tsgolint/*'
+  - '@rolldown/*'
+  - '@tsdown/*'
+  - oxlint
+  - oxfmt
+  - oxlint-tsgolint
+  - tsdown
+  - rolldown
+  - '@akiver/cs-demo-analyzer'
+  - vitest
+  - '@vitest/*'
+  - electron-to-chromium
+  - es-module-lexer
+  - immer
+  - prosemirror-view
+nodeLinker: hoisted
 
 packages:
   - src/node/os/get-running-process-exit-code
@@ -13,8 +34,9 @@ allowBuilds:
 catalog:
   esbuild: 0.28.1
   node-gyp: 13.0.0
-  vite: npm:@voidzero-dev/vite-plus-core@0.2.1
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.1d7ba811f0e456640b0e761e8e8acf77d1ad3251
   vitest: 4.1.9
+  vite-plus: 0.0.0-commit.1d7ba811f0e456640b0e761e8e8acf77d1ad3251
 
 overrides:
   esbuild: 'catalog:'
@@ -31,6 +53,3 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
-
-minimumReleaseAgeExclude:
-  - '@akiver/cs-demo-analyzer'
